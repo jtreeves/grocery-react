@@ -1,7 +1,12 @@
-function App() {
+import GlobalStorage from './GlobalStorage'
+
+function App(): JSX.Element {
     return (
-        <div>
-        </div>
+        <GlobalStorage.Provider
+            value={[{}, () => {}]}
+        >
+            Hello, world!
+        </GlobalStorage.Provider>
     )
 }
 
