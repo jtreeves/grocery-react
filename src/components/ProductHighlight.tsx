@@ -33,10 +33,18 @@ function ProductHighlight({
             <p>{product.image}</p>
             <p>{product.price}</p>
 
+            {productTally < 6 && productTally > 0 &&
+                <p>Only {productTally} left in stock!</p>
+            }
+
             {productTally > 0 &&
                 <button onClick={addProductToCart}>
                     Add to Cart
                 </button>
+            }
+
+            {productTally === 0 &&
+                <p>OUT OF STOCK</p>
             }
         </div>
     )
