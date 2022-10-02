@@ -10,7 +10,18 @@ interface Category {
     products: string[]
 }
 
+interface FoodStock extends Food {
+    items: number
+}
+
+interface Storage {
+    cart: Food[]
+    stock: FoodStock[]
+}
+
 export type {
     Food,
-    Category
+    Category,
+    FoodStock,
+    Storage
 }

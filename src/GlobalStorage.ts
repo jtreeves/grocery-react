@@ -4,18 +4,18 @@ import {
     Dispatch,
     SetStateAction
 } from 'react'
-
-interface GenericObject {
-    [key: string]: any
-}
+import { Storage } from './interfaces'
 
 type StorageContext = [
-    GenericObject,
-    Dispatch<SetStateAction<GenericObject>>
+    Storage,
+    Dispatch<SetStateAction<Storage>>
 ]
 
 const GlobalStorage: Context<StorageContext> = createContext<StorageContext>([
-    {},
+    {
+        cart: [],
+        stock: []
+    },
     () => {}
 ])
 

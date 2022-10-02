@@ -1,8 +1,10 @@
+import { useState } from 'react'
 import { 
     Route, 
     Routes,
     Navigate
 } from 'react-router-dom'
+import { Storage } from './interfaces'
 import GlobalStorage from './GlobalStorage'
 import Home from './components/Home/Home'
 import CategoryResults from './components/CategoryResults/CategoryResults'
@@ -12,9 +14,14 @@ import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 
 function App(): JSX.Element {
+    const [storage, setStorage] = useState<Storage>({
+        cart: [],
+        stock: []
+    })
+
     return (
         <GlobalStorage.Provider
-            value={[{}, () => {}]}
+            value={[storage, setStorage]}
         >
             <Header />
 
