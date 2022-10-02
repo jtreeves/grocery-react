@@ -1,17 +1,17 @@
 import { ReactElement } from 'react'
-import { ProductsTallyProp, ProductTally } from '../../interfaces'
-import CheckoutProduct from './CheckoutProduct'
+import { Product, ProductsProp } from '../../interfaces'
+import BrowseItem from './BrowseItem'
 
-function CheckoutList({
+function BrowseList({
     products
-}: ProductsTallyProp): JSX.Element {
+}: ProductsProp): JSX.Element {
     const mappedProducts: ReactElement[] = products.map((
-        product: ProductTally, 
+        product: Product, 
         index: number
     ): ReactElement => {
         return (
             <li key={index}>
-                <CheckoutProduct product={product} />
+                <BrowseItem product={product} />
             </li>
         )
     })
@@ -23,4 +23,4 @@ function CheckoutList({
     )
 }
 
-export default CheckoutList
+export default BrowseList

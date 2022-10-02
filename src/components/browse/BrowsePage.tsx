@@ -8,13 +8,13 @@ import {
     Category, 
     Product 
 } from '../../interfaces'
-import ProductsList from './ProductsList'
+import BrowseList from './BrowseList'
 import productsData from '../../data/products'
 import categoriesData from '../../data/categories'
 import findProductsByCategory from '../../utilities/findProductsByCategory'
 import findCategoryByName from '../../utilities/findCategoryByName'
 
-function Products(): JSX.Element {
+function BrowsePage(): JSX.Element {
     const [category, setCategory] = useState<Category>(categoriesData[0])
     const [products, setProducts] = useState<Product[]>(productsData)
 
@@ -51,9 +51,9 @@ function Products(): JSX.Element {
                 </select>
             </form>
 
-            <ProductsList products={products} />
+            <BrowseList products={products} />
         </>
     )
 }
 
-export default Products
+export default BrowsePage

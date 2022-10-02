@@ -1,17 +1,17 @@
 import { ReactElement } from 'react'
-import { Product, ProductsProp } from '../../interfaces'
-import ProductHighlight from './ProductHighlight'
+import { ProductsTallyProp, ProductTally } from '../../interfaces'
+import CartItem from './CartItem'
 
-function ProductsList({
+function CartList({
     products
-}: ProductsProp): JSX.Element {
+}: ProductsTallyProp): JSX.Element {
     const mappedProducts: ReactElement[] = products.map((
-        product: Product, 
+        product: ProductTally, 
         index: number
     ): ReactElement => {
         return (
             <li key={index}>
-                <ProductHighlight product={product} />
+                <CartItem product={product} />
             </li>
         )
     })
@@ -23,4 +23,4 @@ function ProductsList({
     )
 }
 
-export default ProductsList
+export default CartList

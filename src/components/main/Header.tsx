@@ -14,8 +14,8 @@ function Header(): JSX.Element {
                     </li>
                     
                     <li>
-                        <Link to='products'>
-                            Products
+                        <Link to='browse'>
+                            Browse
                         </Link>
                     </li>
                     

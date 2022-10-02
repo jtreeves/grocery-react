@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react'
-import Home from '../../../components/main/Home'
+import HomePage from '../../../components/main/HomePage'
 
-describe('Home component', () => {
+describe('HomePage component', () => {
     it('should render heading', () => {
-        render(<Home />)
+        render(<HomePage />)
         const heading = screen.getByText('Home')
         expect(heading).toBeInTheDocument()
     })

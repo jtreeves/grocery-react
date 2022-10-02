@@ -8,9 +8,9 @@ import { Storage } from './interfaces'
 import GlobalStorage from './GlobalStorage'
 import Header from './components/main/Header'
 import Footer from './components/main/Footer'
-import Home from './components/main/Home'
-import Products from './components/browse/Products'
-import Cart from './components/cart/Cart'
+import HomePage from './components/main/HomePage'
+import BrowsePage from './components/browse/BrowsePage'
+import CartPage from './components/cart/CartPage'
 import createInitialStock from './utilities/createInitialStock'
 
 function App(): JSX.Element {
@@ -33,17 +33,17 @@ function App(): JSX.Element {
                 
                 <Route 
                     path='home'
-                    element={<Home />}
+                    element={<HomePage />}
                 />
                 
                 <Route 
-                    path='products'
-                    element={<Products />}
+                    path='browse'
+                    element={<BrowsePage />}
                 />
                 
                 <Route 
                     path='cart'
-                    element={<Cart />}
+                    element={<CartPage />}
                 />
             </Routes>
 

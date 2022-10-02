@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react'
-import Cart from '../../../components/cart/Cart'
+import CartPage from '../../../components/cart/CartPage'
 
-describe('Cart component', () => {
+describe('CartPage component', () => {
     it('should render heading', () => {
-        render(<Cart />)
+        render(<CartPage />)
         const heading = screen.getByText('Cart')
         expect(heading).toBeInTheDocument()
     })

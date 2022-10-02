@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react'
-import CheckoutProduct from '../../../components/cart/CheckoutProduct'
+import CartItem from '../../../components/cart/CartItem'
 
-describe('CheckoutProduct component', () => {
+describe('CartItem component', () => {
     it('should render heading', () => {
-        render(<CheckoutProduct product={{
+        render(<CartItem product={{
             id: '',
             name: '',
             image: '',

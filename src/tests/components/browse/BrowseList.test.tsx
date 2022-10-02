@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react'
-import ProductsList from '../../../components/browse/ProductsList'
+import BrowseList from '../../../components/browse/BrowseList'
 import products from '../../../data/products'
 
-describe('ProductsList component', () => {
+describe('BrowseList component', () => {
     it('should render heading', () => {
-        render(<ProductsList products={products} />)
+        render(<BrowseList products={products} />)
         const heading = screen.getByText('Products List')
         expect(heading).toBeInTheDocument()
     })

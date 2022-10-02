@@ -5,7 +5,7 @@ import GlobalStorage from '../../GlobalStorage'
 import addProduct from '../../utilities/addProduct'
 import removeProduct from '../../utilities/removeProduct'
 
-function ProductHighlight({
+function BrowseItem({
     product
 }: ProductProp): JSX.Element {
     const [storage, setStorage] = useContext<StorageContext>(GlobalStorage)
@@ -50,4 +50,4 @@ function ProductHighlight({
     )
 }
 
-export default ProductHighlight
+export default BrowseItem
