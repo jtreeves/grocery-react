@@ -4,7 +4,7 @@ import GlobalStorage from '../../GlobalStorage'
 import CartList from './CartList'
 
 function CartPage(): JSX.Element {
-    const [storage, setStorage] = useContext<StorageContext>(GlobalStorage)
+    const [storage] = useContext<StorageContext>(GlobalStorage)
 
     return (
         <div>

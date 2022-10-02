@@ -2,6 +2,7 @@ import { ReactEventHandler, useContext } from 'react'
 import { ProductProp, ProductTally } from '../../interfaces'
 import { StorageContext } from '../../types'
 import GlobalStorage from '../../GlobalStorage'
+import findProductInCollection from '../../utilities/findProductInCollection'
 import addProduct from '../../utilities/addProduct'
 import removeProduct from '../../utilities/removeProduct'
 
@@ -9,12 +10,7 @@ function BrowseItem({
     product
 }: ProductProp): JSX.Element {
     const [storage, setStorage] = useContext<StorageContext>(GlobalStorage)
-    const foundProductsInStock: ProductTally[] = storage.stock.filter((
-        stockedProduct: ProductTally
-    ): boolean => {
-        return stockedProduct.id === product.id
-    })
-    const foundProduct: ProductTally = foundProductsInStock[0]
+    const foundProduct: ProductTally = findProductInCollection(product.id, storage.stock)
     const productTally: number = foundProduct.tally
 
     const addProductToCart: ReactEventHandler = (): void => {

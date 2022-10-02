@@ -18,17 +18,6 @@ function BrowsePage(): JSX.Element {
     const [category, setCategory] = useState<Category>(categoriesData[0])
     const [products, setProducts] = useState<Product[]>(productsData)
 
-    const handleCategory: FormEventHandler = (
-        event: ChangeEvent<HTMLInputElement>
-    ): void => {
-        const categoryName: string = event.target.value
-        const selectedCategory: Category = findCategoryByName(categoryName)
-        const productsForCategory: Product[] = findProductsByCategory(selectedCategory)
-
-        setCategory(selectedCategory)
-        setProducts(productsForCategory)
-    }
-
     const categoryOptions: ReactElement[] = categoriesData.map((
         category: Category, 
         index: number
@@ -39,6 +28,17 @@ function BrowsePage(): JSX.Element {
             </option>
         )
     })
+    
+    const handleCategory: FormEventHandler = (
+        event: ChangeEvent<HTMLInputElement>
+    ): void => {
+        const categoryName: string = event.target.value
+        const selectedCategory: Category = findCategoryByName(categoryName)
+        const productsForCategory: Product[] = findProductsByCategory(selectedCategory)
+
+        setCategory(selectedCategory)
+        setProducts(productsForCategory)
+    }
 
     return (
         <>
