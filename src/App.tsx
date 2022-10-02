@@ -12,11 +12,12 @@ import Cart from './pages/Cart'
 import Receipt from './pages/Receipt'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import createInitialStock from './utilities/createInitialStock'
 
 function App(): JSX.Element {
     const [storage, setStorage] = useState<Storage>({
         cart: [],
-        stock: []
+        stock: createInitialStock()
     })
 
     return (
