@@ -7,39 +7,56 @@ const categories: Category[] = [
         products: listAllProductIds()
     },
     {
-        name: 'fruits',
+        name: 'Alcohol',
         products: [
-            'APL179',
-            'GRP372',
-            'MLN445'
+            'BER002',
+            'CMP773',
+            'WNE821'
         ]
     },
     {
-        name: 'vegetables',
+        name: 'Breads',
         products: [
-            'CRT116',
-            'CRN529',
-            'BRC180'
-        ]
-    },
-    {
-        name: 'breads',
-        products: [
-            'BRD026',
+            'BGL002',
+            'BGT819',
             'CRT672',
-            'BGL002'
+            'LOF026',
+            'WFL330'
         ]
     },
     {
-        name: 'dairy',
+        name: 'Dairy',
         products: [
-            'CHS337',
             'BTR721',
+            'CHS337',
             'MLK922'
         ]
     },
     {
-        name: 'meats',
+        name: 'Desserts',
+        products: [
+            'CHT157',
+            'CKE207',
+            'CPK183',
+            'ICM449',
+            'PIE991'
+        ]
+    },
+    {
+        name: 'Fruits',
+        products: [
+            'APL179',
+            'BNA876',
+            'GRP372',
+            'LMN220',
+            'PCH401',
+            'PER487',
+            'STB270',
+            'WMN621'
+        ]
+    },
+    {
+        name: 'Meats',
         products: [
             'CKN081',
             'PRK125',
@@ -47,21 +64,34 @@ const categories: Category[] = [
         ]
     },
     {
-        name: 'sweets',
+        name: 'Seafood',
         products: [
-            'ICM449',
-            'CKE207',
-            'CPK183'
+            'CRB703',
+            'LBR115',
+            'OYR832',
+            'SHP763'
         ]
     },
     {
-        name: 'alcohol',
+        name: 'Toiletries',
         products: [
-            'CMP773',
-            'WNE821',
-            'BER002'
+            'LTN002',
+            'RZR722',
+            'SOP993',
+            'TLP814'
         ]
     },
+    {
+        name: 'Vegetables',
+        products: [
+            'AVD819',
+            'BRC180',
+            'CRT116',
+            'CRN529',
+            'LTC571',
+            'ONN611'
+        ]
+    }
 ]
 
 export default categories
