@@ -1,6 +1,14 @@
-interface Food {}
+interface Food {
+    id: string
+    name: string
+    image: string
+    price: number
+}
 
-interface Category {}
+interface Category {
+    name: string
+    products: string[]
+}
 
 export type {
     Food,
