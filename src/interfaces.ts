@@ -10,13 +10,13 @@ interface Category {
     products: string[]
 }
 
-interface ProductStock extends Product {
-    items: number
+interface ProductTally extends Product {
+    tally: number
 }
 
 interface Storage {
-    cart: Product[]
-    stock: ProductStock[]
+    cart: ProductTally[]
+    stock: ProductTally[]
 }
 
 interface ProductProp {
@@ -30,7 +30,7 @@ interface ProductsProp {
 export type {
     Product,
     Category,
-    ProductStock,
+    ProductTally,
     Storage,
     ProductProp,
     ProductsProp

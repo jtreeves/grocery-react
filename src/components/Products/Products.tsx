@@ -3,7 +3,8 @@ import { Category, Product } from '../../interfaces'
 import ProductsList from '../ProductsList/ProductsList'
 import productsData from '../../data/products'
 import categoriesData from '../../data/categories'
-import findProductById from '../../utilities/findProductById'
+import findProductsByCategory from '../../utilities/findProductsByCategory'
+import findCategoryByName from '../../utilities/findCategoryByName'
 
 function Products(): JSX.Element {
     const [category, setCategory] = useState<Category>(categoriesData[0])
@@ -11,12 +12,8 @@ function Products(): JSX.Element {
 
     const handleCategory = (event: any) => {
         const categoryName: string = event.target.value
-        const selectedCategory: Category = categoriesData.filter((category) => {
-            return category.name === categoryName
-        })[0]
-        const productsForCategory: Product[] = selectedCategory.products.map((productId) => {
-            return findProductById(productId)
-        })
+        const selectedCategory: Category = findCategoryByName(categoryName)
+        const productsForCategory: Product[] = findProductsByCategory(selectedCategory)
         setCategory(selectedCategory)
         setProducts(productsForCategory)
     }
