@@ -4,7 +4,11 @@ function ProductHighlight({
     product
 }: ProductProp): JSX.Element {
     return (
-        <div>{product.name}</div>
+        <div>
+            <h2>{product.name}</h2>
+            <p>{product.image}</p>
+            <p>{product.price}</p>
+        </div>
     )
 }
 
