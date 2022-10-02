@@ -10,7 +10,9 @@ function findProductById(
         return product.id === id
     })
 
-    return foundProducts[0]
+    const foundProduct: Product = foundProducts[0]
+
+    return foundProduct
 }
 
 export default findProductById

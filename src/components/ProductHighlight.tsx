@@ -9,6 +9,13 @@ function ProductHighlight({
     product
 }: ProductProp): JSX.Element {
     const [storage, setStorage] = useContext<StorageContext>(GlobalStorage)
+    const foundProductsInStock: ProductTally[] = storage.stock.filter((
+        stockedProduct: ProductTally
+    ): boolean => {
+        return stockedProduct.id === product.id
+    })
+    const foundProduct: ProductTally = foundProductsInStock[0]
+    const productTally: number = foundProduct.tally
 
     const addProductToCart: ReactEventHandler = (): void => {
         const updatedCart: ProductTally[] = addProduct(product, storage.cart)
@@ -25,10 +32,12 @@ function ProductHighlight({
             <h2>{product.name}</h2>
             <p>{product.image}</p>
             <p>{product.price}</p>
-            
-            <button onClick={addProductToCart}>
-                Add to Cart
-            </button>
+
+            {productTally > 0 &&
+                <button onClick={addProductToCart}>
+                    Add to Cart
+                </button>
+            }
         </div>
     )
 }

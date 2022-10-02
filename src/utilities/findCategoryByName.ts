@@ -10,7 +10,9 @@ function findCategoryByName(
         return category.name === name
     })
 
-    return foundCategories[0]
+    const foundCategory: Category = foundCategories[0]
+
+    return foundCategory
 }
 
 export default findCategoryByName
