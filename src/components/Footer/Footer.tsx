@@ -1,6 +1,11 @@
-function Footer() {
+function Footer(): JSX.Element {
+    const now: Date = new Date()
+    const year: number = now.getFullYear()
+
     return (
-        <h1>Footer</h1>
+        <footer>
+            © {year}
+        </footer>
     )
 }
 

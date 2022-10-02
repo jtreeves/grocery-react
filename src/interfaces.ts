@@ -1,4 +1,4 @@
-interface Food {
+interface Product {
     id: string
     name: string
     image: string
@@ -10,18 +10,18 @@ interface Category {
     products: string[]
 }
 
-interface FoodStock extends Food {
+interface ProductStock extends Product {
     items: number
 }
 
 interface Storage {
-    cart: Food[]
-    stock: FoodStock[]
+    cart: Product[]
+    stock: ProductStock[]
 }
 
 export type {
-    Food,
+    Product,
     Category,
-    FoodStock,
+    ProductStock,
     Storage
 }

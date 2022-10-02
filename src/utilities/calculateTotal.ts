@@ -1,12 +1,12 @@
-import { Food } from '../interfaces'
+import { Product } from '../interfaces'
 
 function calculateTotal(
-    foods: Food[]
+    products: Product[]
 ): number {
     let total: number = 0
 
-    foods.forEach((food: Food) => {
-        total += food.price
+    products.forEach((product: Product) => {
+        total += product.price
     })
 
     return total

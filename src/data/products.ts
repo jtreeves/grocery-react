@@ -1,6 +1,6 @@
-import { Food } from '../interfaces'
+import { Product } from '../interfaces'
 
-const foods: Food[] = [
+const products: Product[] = [
     {
         id: 'STK893',
         name: 'steak',
@@ -267,4 +267,4 @@ const foods: Food[] = [
     },
 ]
 
-export default foods
+export default products

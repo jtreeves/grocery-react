@@ -7,7 +7,7 @@ import {
 import { Storage } from './interfaces'
 import GlobalStorage from './GlobalStorage'
 import Home from './components/Home/Home'
-import CategoryResults from './components/CategoryResults/CategoryResults'
+import Products from './components/Products/Products'
 import Cart from './components/Cart/Cart'
 import Receipt from './components/Receipt/Receipt'
 import Header from './components/Header/Header'
@@ -37,8 +37,8 @@ function App(): JSX.Element {
                 />
                 
                 <Route 
-                    path='results'
-                    element={<CategoryResults />}
+                    path='products'
+                    element={<Products />}
                 />
                 
                 <Route 
