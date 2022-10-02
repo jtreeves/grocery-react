@@ -7,7 +7,7 @@ function createInitialStock(): ProductTally[] {
     ): ProductTally => {
         return {
             ...product,
-            tally: 10
+            tally: Math.floor(Math.random() * 20)
         }
     })
 
