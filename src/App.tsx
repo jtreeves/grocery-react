@@ -6,12 +6,11 @@ import {
 } from 'react-router-dom'
 import { Storage } from './interfaces'
 import GlobalStorage from './GlobalStorage'
-import Home from './pages/Home'
-import Products from './pages/Products'
-import Cart from './pages/Cart'
-import Receipt from './pages/Receipt'
-import Header from './components/Header'
-import Footer from './components/Footer'
+import Header from './components/main/Header'
+import Footer from './components/main/Footer'
+import Home from './components/main/Home'
+import Products from './components/browse/Products'
+import Cart from './components/cart/Cart'
 import createInitialStock from './utilities/createInitialStock'
 
 function App(): JSX.Element {
@@ -45,11 +44,6 @@ function App(): JSX.Element {
                 <Route 
                     path='cart'
                     element={<Cart />}
-                />
-                
-                <Route 
-                    path='receipt'
-                    element={<Receipt />}
                 />
             </Routes>
 

@@ -1,4 +1,4 @@
-import removeProduct from './removeProduct'
+import removeProduct from '../../utilities/removeProduct'
 
 describe('removeProduct utility', () => {
     it('should be a function', () => {

@@ -1,4 +1,4 @@
-import calculateTotal from './calculateTotal'
+import calculateTotal from '../../utilities/calculateTotal'
 
 describe('calculateTotal utility', () => {
     it('should be a function', () => {

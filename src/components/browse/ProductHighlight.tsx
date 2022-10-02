@@ -1,9 +1,9 @@
 import { ReactEventHandler, useContext } from 'react'
-import { ProductProp, ProductTally } from '../interfaces'
-import { StorageContext } from '../types'
-import GlobalStorage from '../GlobalStorage'
-import addProduct from '../utilities/addProduct'
-import removeProduct from '../utilities/removeProduct'
+import { ProductProp, ProductTally } from '../../interfaces'
+import { StorageContext } from '../../types'
+import GlobalStorage from '../../GlobalStorage'
+import addProduct from '../../utilities/addProduct'
+import removeProduct from '../../utilities/removeProduct'
 
 function ProductHighlight({
     product

@@ -1,4 +1,4 @@
-import listAllProductIds from './listAllProductIds'
+import listAllProductIds from '../../utilities/listAllProductIds'
 
 describe('listAllProductIds utility', () => {
     it('should be a function', () => {

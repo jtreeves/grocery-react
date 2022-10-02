@@ -1,4 +1,4 @@
-import findCategoryByName from './findCategoryByName'
+import findCategoryByName from '../../utilities/findCategoryByName'
 
 describe('findCategoryByName utility', () => {
     it('should be a function', () => {

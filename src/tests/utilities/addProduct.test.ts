@@ -1,4 +1,4 @@
-import addProduct from './addProduct'
+import addProduct from '../../utilities/addProduct'
 
 describe('addProduct utility', () => {
     it('should be a function', () => {

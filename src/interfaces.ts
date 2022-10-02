@@ -27,11 +27,21 @@ interface ProductsProp {
     products: Product[]
 }
 
+interface ProductTallyProp {
+    product: ProductTally
+}
+
+interface ProductsTallyProp {
+    products: ProductTally[]
+}
+
 export type {
     Product,
     Category,
     ProductTally,
     Storage,
     ProductProp,
-    ProductsProp
+    ProductsProp,
+    ProductsTallyProp,
+    ProductTallyProp
 }

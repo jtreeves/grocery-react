@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
-import ProductHighlight from './ProductHighlight'
-import products from '../data/products'
+import ProductHighlight from '../../../components/browse/ProductHighlight'
+import products from '../../../data/products'
 
 describe('ProductHighlight component', () => {
     it('should render heading', () => {

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import Cart from './Cart'
+import Cart from '../../../components/cart/Cart'
 
 describe('Cart component', () => {
     it('should render heading', () => {

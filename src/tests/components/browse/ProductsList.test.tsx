@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
-import ProductsList from './ProductsList'
-import products from '../data/products'
+import ProductsList from '../../../components/browse/ProductsList'
+import products from '../../../data/products'
 
 describe('ProductsList component', () => {
     it('should render heading', () => {
