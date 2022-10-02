@@ -8,7 +8,7 @@ function ProductsList({
     const mappedProducts: ReactElement[] = products.map((
         product: Product, 
         index: number
-    ) => {
+    ): ReactElement => {
         return (
             <li key={index}>
                 <ProductHighlight product={product} />
