@@ -19,9 +19,19 @@ interface Storage {
     stock: ProductStock[]
 }
 
+interface ProductProp {
+    product: Product
+}
+
+interface ProductsProp {
+    products: Product[]
+}
+
 export type {
     Product,
     Category,
     ProductStock,
-    Storage
+    Storage,
+    ProductProp,
+    ProductsProp
 }

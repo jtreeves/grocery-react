@@ -1,24 +1,21 @@
 import { ReactElement } from 'react'
-import { Product } from '../../interfaces'
-
-interface ProductsListProps {
-    products: Product[]
-}
+import { Product, ProductsProp } from '../../interfaces'
+import ProductHighlight from '../ProductHighlight/ProductHighlight'
 
 function ProductsList({
     products
-}: ProductsListProps): JSX.Element {
+}: ProductsProp): JSX.Element {
     const mappedProducts: ReactElement[] = products.map((
         product: Product, 
         index: number
     ) => {
         return (
             <li key={index}>
-                {product.name}
+                <ProductHighlight product={product} />
             </li>
         )
     })
-    
+
     return (
         <ul>
             {mappedProducts}

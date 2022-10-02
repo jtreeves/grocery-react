@@ -1,6 +1,10 @@
-function ProductHighlight(): JSX.Element {
+import { ProductProp } from '../../interfaces'
+
+function ProductHighlight({
+    product
+}: ProductProp): JSX.Element {
     return (
-        <h1>Product Highlight</h1>
+        <div>{product.name}</div>
     )
 }
 
