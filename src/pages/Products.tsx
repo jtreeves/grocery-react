@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { Category, Product } from '../../interfaces'
-import ProductsList from '../ProductsList/ProductsList'
-import productsData from '../../data/products'
-import categoriesData from '../../data/categories'
-import findProductsByCategory from '../../utilities/findProductsByCategory'
-import findCategoryByName from '../../utilities/findCategoryByName'
+import { Category, Product } from '../interfaces'
+import ProductsList from '../components/ProductsList'
+import productsData from '../data/products'
+import categoriesData from '../data/categories'
+import findProductsByCategory from '../utilities/findProductsByCategory'
+import findCategoryByName from '../utilities/findCategoryByName'
 
 function Products(): JSX.Element {
     const [category, setCategory] = useState<Category>(categoriesData[0])

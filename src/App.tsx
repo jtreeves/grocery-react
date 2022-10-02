@@ -6,12 +6,12 @@ import {
 } from 'react-router-dom'
 import { Storage } from './interfaces'
 import GlobalStorage from './GlobalStorage'
-import Home from './components/Home/Home'
-import Products from './components/Products/Products'
-import Cart from './components/Cart/Cart'
-import Receipt from './components/Receipt/Receipt'
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
+import Home from './pages/Home'
+import Products from './pages/Products'
+import Cart from './pages/Cart'
+import Receipt from './pages/Receipt'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 function App(): JSX.Element {
     const [storage, setStorage] = useState<Storage>({

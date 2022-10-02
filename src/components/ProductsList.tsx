@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
-import { Product, ProductsProp } from '../../interfaces'
-import ProductHighlight from '../ProductHighlight/ProductHighlight'
+import { Product, ProductsProp } from '../interfaces'
+import ProductHighlight from './ProductHighlight'
 
 function ProductsList({
     products

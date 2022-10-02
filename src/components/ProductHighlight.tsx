@@ -1,4 +1,4 @@
-import { ProductProp } from '../../interfaces'
+import { ProductProp } from '../interfaces'
 
 function ProductHighlight({
     product
