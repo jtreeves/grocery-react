@@ -1,15 +1,8 @@
 import {
     createContext,
-    Context,
-    Dispatch,
-    SetStateAction
+    Context
 } from 'react'
-import { Storage } from './interfaces'
-
-type StorageContext = [
-    Storage,
-    Dispatch<SetStateAction<Storage>>
-]
+import { StorageContext } from './types'
 
 const GlobalStorage: Context<StorageContext> = createContext<StorageContext>([
     {
