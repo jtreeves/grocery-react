@@ -36,6 +36,8 @@ function CartItem({
     return (
         <div>
             <p>{product.name}</p>
+            <p>{product.image}</p>
+            <p>${product.price}</p>
 
             {product.tally > 0 &&
                 <button onClick={decreaseTallyInCart}>

@@ -27,7 +27,7 @@ function BrowseItem({
         <div>
             <h2>{product.name}</h2>
             <p>{product.image}</p>
-            <p>{product.price}</p>
+            <p>${product.price}</p>
 
             {productTally < 6 && productTally > 0 &&
                 <p>Only {productTally} left in stock!</p>
