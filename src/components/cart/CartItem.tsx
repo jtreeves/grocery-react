@@ -1,18 +1,21 @@
-import { useContext } from 'react'
-import GlobalStorage from '../../GlobalStorage'
+import { ReactEventHandler, useContext } from 'react'
 import { ProductTallyProp, ProductTally } from '../../interfaces'
 import { StorageContext } from '../../types'
+import GlobalStorage from '../../GlobalStorage'
 import addProduct from '../../utilities/addProduct'
 import removeProduct from '../../utilities/removeProduct'
+import findProductInCollection from '../../utilities/findProductInCollection'
 
-function CheckoutProduct({
+function CartItem({
     product
 }: ProductTallyProp): JSX.Element {
     const [storage, setStorage] = useContext<StorageContext>(GlobalStorage)
+    const stockedProduct: ProductTally = findProductInCollection(product.id, storage.stock)
+    const stockTally: number = stockedProduct.tally
 
-    const increaseTallyInCart = () => {
-        const updatedCart: ProductTally[] = addProduct(product, storage.cart)
-        const updatedStock: ProductTally[] = removeProduct(product, storage.stock)
+    const decreaseTallyInCart: ReactEventHandler = (): void => {
+        const updatedCart: ProductTally[] = removeProduct(product, storage.cart)
+        const updatedStock: ProductTally[] = addProduct(product, storage.stock)
 
         setStorage({
             cart: updatedCart,
@@ -20,9 +23,9 @@ function CheckoutProduct({
         })
     }
 
-    const decreaseTallyInCart = () => {
-        const updatedCart: ProductTally[] = removeProduct(product, storage.cart)
-        const updatedStock: ProductTally[] = addProduct(product, storage.stock)
+    const increaseTallyInCart: ReactEventHandler = (): void => {
+        const updatedCart: ProductTally[] = addProduct(product, storage.cart)
+        const updatedStock: ProductTally[] = removeProduct(product, storage.stock)
 
         setStorage({
             cart: updatedCart,
@@ -33,11 +36,22 @@ function CheckoutProduct({
     return (
         <div>
             <p>{product.name}</p>
+
+            {product.tally > 0 &&
+                <button onClick={decreaseTallyInCart}>
+                    -
+                </button>
+            }
+
             <p>{product.tally}</p>
-            <button onClick={increaseTallyInCart}>Increase Amount by 1</button>
-            <button onClick={decreaseTallyInCart}>Decrease Amount by 1</button>
+            
+            {stockTally > 0 &&
+                <button onClick={increaseTallyInCart}>
+                    +
+                </button>
+            }
         </div>
     )
 }
 
-export default CheckoutProduct
+export default CartItem
