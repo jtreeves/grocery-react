@@ -6,7 +6,7 @@ function findProductsByCategory(
 ): Product[] {
     const foundProducts: Product[] = category.products.map((
         productId: string
-    ) => {
+    ): Product => {
         return findProductById(productId)
     })
 

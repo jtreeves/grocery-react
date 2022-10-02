@@ -6,7 +6,7 @@ function findCategoryByName(
 ): Category {
     const foundCategories: Category[] = categories.filter((
         category: Category
-    ) => {
+    ): boolean => {
         return category.name === name
     })
 

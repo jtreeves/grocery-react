@@ -5,7 +5,9 @@ function calculateTotal(
 ): number {
     let total: number = 0
 
-    products.forEach((product: Product) => {
+    products.forEach((
+        product: Product
+    ): void => {
         total += product.price
     })
 

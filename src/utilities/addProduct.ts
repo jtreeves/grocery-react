@@ -8,7 +8,7 @@ function addProduct(
 
     const productPresent: boolean = collection.some((
         currentProduct: ProductTally
-    ) => {
+    ): boolean => {
         return currentProduct.id === product.id
     })
 
@@ -23,7 +23,7 @@ function addProduct(
     } else {
         updatedCollection = collection.map((
             currentProduct: ProductTally
-        ) => {
+        ): ProductTally => {
             if (currentProduct.id === product.id) {
                 const updatedProduct: ProductTally = {
                     ...currentProduct,

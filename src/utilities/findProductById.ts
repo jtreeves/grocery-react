@@ -6,7 +6,7 @@ function findProductById(
 ): Product {
     const foundProducts: Product[] = products.filter((
         product: Product
-    ) => {
+    ): boolean => {
         return product.id === id
     })
 

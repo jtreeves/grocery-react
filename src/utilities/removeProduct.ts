@@ -6,7 +6,7 @@ function removeProduct(
 ): ProductTally[] {
     const updatedCollection: ProductTally[] = collection.map((
         currentProduct: ProductTally
-    ) => {
+    ): ProductTally => {
         if (currentProduct.id === product.id) {
             const updatedProduct: ProductTally = {
                 ...currentProduct,
