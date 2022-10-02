@@ -1,15 +1,24 @@
 import { useState } from 'react'
-import { Product } from '../../interfaces'
+import { Category, Product } from '../../interfaces'
 import ProductsList from '../ProductsList/ProductsList'
 import productsData from '../../data/products'
 import categoriesData from '../../data/categories'
+import findProductById from '../../utilities/findProductById'
 
 function Products(): JSX.Element {
-    const [category, setCategory] = useState<string>('All Products')
+    const [category, setCategory] = useState<Category>(categoriesData[0])
     const [products, setProducts] = useState<Product[]>(productsData)
 
     const handleCategory = (event: any) => {
-        setCategory(event.target.value)
+        const categoryName: string = event.target.value
+        const selectedCategory: Category = categoriesData.filter((category) => {
+            return category.name === categoryName
+        })[0]
+        const productsForCategory: Product[] = selectedCategory.products.map((productId) => {
+            return findProductById(productId)
+        })
+        setCategory(selectedCategory)
+        setProducts(productsForCategory)
     }
 
     const categoryOptions = categoriesData.map((category, index) => {
@@ -22,7 +31,7 @@ function Products(): JSX.Element {
 
     return (
         <>
-            <h1>{category}</h1>
+            <h1>{category.name}</h1>
 
             <form onChange={handleCategory}>
                 <label htmlFor='category'>Category</label>

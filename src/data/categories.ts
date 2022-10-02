@@ -1,6 +1,15 @@
-import { Category } from '../interfaces'
+import { Category, Product } from '../interfaces'
+import products from './products'
+
+const allProductIds: string[] = products.map((product: Product) => {
+    return product.id
+})
 
 const categories: Category[] = [
+    {
+        name: 'All Products',
+        products: allProductIds
+    },
     {
         name: 'fruits',
         products: [
