@@ -28,7 +28,7 @@ function BrowsePage(): JSX.Element {
             </option>
         )
     })
-    
+
     const handleCategory: FormEventHandler = (
         event: ChangeEvent<HTMLInputElement>
     ): void => {
@@ -41,7 +41,7 @@ function BrowsePage(): JSX.Element {
     }
 
     return (
-        <>
+        <main>
             <h1>{category.name}</h1>
 
             <form onChange={handleCategory}>
@@ -52,7 +52,7 @@ function BrowsePage(): JSX.Element {
             </form>
 
             <BrowseList products={products} />
-        </>
+        </main>
     )
 }
 

@@ -19,7 +19,7 @@ function CartPage(): JSX.Element {
     }
 
     return (
-        <div>
+        <main>
             <h1>Cart</h1>
 
             <CartList products={storage.cart} />
@@ -27,7 +27,7 @@ function CartPage(): JSX.Element {
             <p>TOTAL: ${total}</p>
 
             <button onClick={handleCheckout}>CHECKOUT</button>
-        </div>
+        </main>
     )
 }
 
