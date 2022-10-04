@@ -23,7 +23,7 @@ function ProductHighlight({
     const isCart: boolean = location.pathname.includes('cart')
 
     return (
-        <>
+        <li>
             <h2>{product.name}</h2>
             <p>{product.image}</p>
             <p>${formatCurrency(product.price)}</p>
@@ -42,7 +42,7 @@ function ProductHighlight({
                     cartTally={cartTally}
                 />
             }
-        </>
+        </li>
     )
 }
 

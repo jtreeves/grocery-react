@@ -10,9 +10,10 @@ function ProductsList({
         index: number
     ): ReactElement => {
         return (
-            <li key={index}>
-                <ProductHighlight id={product.id} />
-            </li>
+            <ProductHighlight 
+                key={index} 
+                id={product.id} 
+            />
         )
     })
 
