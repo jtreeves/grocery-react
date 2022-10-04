@@ -2,9 +2,9 @@ import { render, screen } from '@testing-library/react'
 import Footer from '../../../components/main/Footer'
 
 describe('Footer component', () => {
-    it('should render heading', () => {
+    it('should contain copyright symbol', () => {
         render(<Footer />)
-        const heading = screen.getByText('Footer')
-        expect(heading).toBeInTheDocument()
+        const symbol = screen.getByText(/©/)
+        expect(symbol).toBeInTheDocument()
     })
 })
