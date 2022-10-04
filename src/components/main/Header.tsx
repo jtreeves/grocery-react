@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 function Header(): JSX.Element {
     return (
         <header>
-            Grocery
+            <span>Grocery</span>
 
             <nav>
                 <ul>
