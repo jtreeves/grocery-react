@@ -9,9 +9,7 @@ import {
 import { 
     Storage 
 } from './interfaces'
-import {
-    createInitialStock
-} from './utilities'
+import createInitialStock from './utilities/createInitialStock'
 import GlobalStorage from './GlobalStorage'
 import Header from './components/main/Header'
 import Footer from './components/main/Footer'

@@ -9,10 +9,8 @@ import {
 import { 
     StorageContext 
 } from '../../types'
-import { 
-    findProductInCollection, 
-    updateProductTally 
-} from '../../utilities'
+import findProductInCollection from '../../utilities/findProductInCollection'
+import updateProductTally from '../../utilities/updateProductTally'
 import GlobalStorage from '../../GlobalStorage'
 
 interface BrowseItemProps extends Identification {

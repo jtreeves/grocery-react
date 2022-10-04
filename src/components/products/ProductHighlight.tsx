@@ -13,11 +13,9 @@ import {
 import { 
     StorageContext 
 } from '../../types'
-import {
-    findProductInCollection,
-    findProductById,
-    formatCurrency
- } from '../../utilities'
+import findProductById from '../../utilities/findProductById'
+import findProductInCollection from '../../utilities/findProductInCollection'
+import formatCurrency from '../../utilities/formatCurrency'
 import GlobalStorage from '../../GlobalStorage'
 import BrowseItem from '../browse/BrowseItem'
 import CartItem from '../cart/CartItem'

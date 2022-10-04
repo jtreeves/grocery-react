@@ -11,13 +11,9 @@ import {
 import { 
     StorageContext 
 } from '../../types'
-import { 
-    categories 
-} from '../../data'
-import { 
-    findProductTalliesByCategory, 
-    findCategoryByName 
-} from '../../utilities'
+import categories from '../../data/categories'
+import findProductTalliesByCategory from '../../utilities/findProductTalliesByCategory'
+import findCategoryByName from '../../utilities/findCategoryByName'
 import GlobalStorage from '../../GlobalStorage'
 import ProductsList from '../products/ProductsList'
 import SelectCategory from './SelectCategory'

@@ -9,9 +9,7 @@ import {
 import { 
     StorageContext 
 } from '../../types'
-import {
-    updateProductTally
-} from '../../utilities'
+import updateProductTally from '../../utilities/updateProductTally'
 import GlobalStorage from '../../GlobalStorage'
 
 interface CartItemProps extends Identification {

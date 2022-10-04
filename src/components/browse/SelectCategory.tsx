@@ -5,9 +5,7 @@ import {
 import { 
     Category
 } from '../../interfaces'
-import { 
-    categories 
-} from '../../data'
+import categories from '../../data/categories'
 
 interface SelectCategoryProp {
     handleCategory: FormEventHandler
