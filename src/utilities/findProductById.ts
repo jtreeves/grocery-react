@@ -4,13 +4,13 @@ import products from '../data/products'
 function findProductById(
     id: string
 ): Product {
-    const foundProducts: Product[] = products.filter((
+    const initialProducts: Product[] = products.filter((
         product: Product
     ): boolean => {
         return product.id === id
     })
 
-    const foundProduct: Product = foundProducts[0]
+    const foundProduct: Product = initialProducts[0]
 
     return foundProduct
 }
