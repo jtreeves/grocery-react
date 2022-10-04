@@ -1,21 +1,24 @@
 import { ReactEventHandler, useContext } from 'react'
-import { ProductTallyProp, ProductTally } from '../../interfaces'
+import { ProductTally, Identification } from '../../interfaces'
 import { StorageContext } from '../../types'
 import GlobalStorage from '../../GlobalStorage'
-import addProduct from '../../utilities/addProduct'
-import removeProduct from '../../utilities/removeProduct'
-import findProductInCollection from '../../utilities/findProductInCollection'
+import updateProductTally from '../../utilities/updateProductTally'
+
+interface CartItemProps extends Identification {
+    stockTally: number
+    cartTally: number
+}
 
 function CartItem({
-    product
-}: ProductTallyProp): JSX.Element {
+    id,
+    stockTally,
+    cartTally
+}: CartItemProps): JSX.Element {
     const [storage, setStorage] = useContext<StorageContext>(GlobalStorage)
-    const stockedProduct: ProductTally = findProductInCollection(product.id, storage.stock)
-    const stockTally: number = stockedProduct.tally
 
-    const decreaseTallyInCart: ReactEventHandler = (): void => {
-        const updatedCart: ProductTally[] = removeProduct(product, storage.cart)
-        const updatedStock: ProductTally[] = addProduct(product, storage.stock)
+    const addProductToCart: ReactEventHandler = (): void => {
+        const updatedCart: ProductTally[] = updateProductTally(id, true, storage.cart)
+        const updatedStock: ProductTally[] = updateProductTally(id, false, storage.stock)
 
         setStorage({
             cart: updatedCart,
@@ -23,9 +26,9 @@ function CartItem({
         })
     }
 
-    const increaseTallyInCart: ReactEventHandler = (): void => {
-        const updatedCart: ProductTally[] = addProduct(product, storage.cart)
-        const updatedStock: ProductTally[] = removeProduct(product, storage.stock)
+    const removeProductFromCart: ReactEventHandler = (): void => {
+        const updatedCart: ProductTally[] = updateProductTally(id, false, storage.cart)
+        const updatedStock: ProductTally[] = updateProductTally(id, true, storage.stock)
 
         setStorage({
             cart: updatedCart,
@@ -34,25 +37,21 @@ function CartItem({
     }
 
     return (
-        <div>
-            <p>{product.name}</p>
-            <p>{product.image}</p>
-            <p>${product.price}</p>
-
-            {product.tally > 0 &&
-                <button onClick={decreaseTallyInCart}>
-                    -
-                </button>
-            }
-
-            <p>{product.tally}</p>
-            
+        <>
             {stockTally > 0 &&
-                <button onClick={increaseTallyInCart}>
+                <button onClick={addProductToCart}>
                     +
                 </button>
             }
-        </div>
+
+            <p>{cartTally}</p>
+
+            {cartTally > 0 &&
+                <button onClick={removeProductFromCart}>
+                    -
+                </button>
+            }
+        </>
     )
 }
 

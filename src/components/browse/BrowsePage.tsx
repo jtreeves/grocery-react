@@ -2,21 +2,24 @@ import {
     ChangeEvent, 
     FormEventHandler, 
     ReactElement, 
+    useContext, 
     useState 
 } from 'react'
 import { 
     Category, 
-    Product 
+    ProductTally
 } from '../../interfaces'
-import BrowseList from './BrowseList'
-import productsData from '../../data/products'
+import { StorageContext } from '../../types'
+import GlobalStorage from '../../GlobalStorage'
 import categoriesData from '../../data/categories'
-import findProductsByCategory from '../../utilities/findProductsByCategory'
+import findProductTalliesByCategory from '../../utilities/findProductTalliesByCategory'
 import findCategoryByName from '../../utilities/findCategoryByName'
+import ProductsList from '../products/ProductsList'
 
 function BrowsePage(): JSX.Element {
+    const [storage] = useContext<StorageContext>(GlobalStorage)
     const [category, setCategory] = useState<Category>(categoriesData[0])
-    const [products, setProducts] = useState<Product[]>(productsData)
+    const [products, setProducts] = useState<ProductTally[]>(storage.stock)
 
     const categoryOptions: ReactElement[] = categoriesData.map((
         category: Category, 
@@ -34,7 +37,7 @@ function BrowsePage(): JSX.Element {
     ): void => {
         const categoryName: string = event.target.value
         const selectedCategory: Category = findCategoryByName(categoryName)
-        const productsForCategory: Product[] = findProductsByCategory(selectedCategory)
+        const productsForCategory: ProductTally[] = findProductTalliesByCategory(selectedCategory, storage.stock)
 
         setCategory(selectedCategory)
         setProducts(productsForCategory)
@@ -51,7 +54,7 @@ function BrowsePage(): JSX.Element {
                 </select>
             </form>
 
-            <BrowseList products={products} />
+            <ProductsList products={products} />
         </main>
     )
 }

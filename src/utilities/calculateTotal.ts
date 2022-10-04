@@ -1,19 +1,22 @@
-import { ProductTally } from '../interfaces'
+import { ProductTally, Product } from '../interfaces'
+import findProductById from './findProductById'
 
 function calculateTotal(
     products: ProductTally[]
-): string {
+): number {
     let total: number = 0
 
     products.forEach((
         product: ProductTally
     ): void => {
-        total += product.price * product.tally
+        const fullProduct: Product = findProductById(product.id)
+        const price: number = fullProduct.price
+        const tally: number = product.tally
+
+        total += price * tally
     })
 
-    const formattedTotal: string = (Math.round(total * 100) / 100).toFixed(2)
-
-    return formattedTotal
+    return total
 }
 
 export default calculateTotal

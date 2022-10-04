@@ -1,16 +1,21 @@
-interface Product {
+interface Identification {
     id: string
+}
+
+interface Name {
     name: string
+}
+
+interface Product extends Identification, Name {
     image: string
     price: number
 }
 
-interface Category {
-    name: string
+interface Category extends Name {
     products: string[]
 }
 
-interface ProductTally extends Product {
+interface ProductTally extends Identification {
     tally: number
 }
 
@@ -43,5 +48,6 @@ export type {
     ProductProp,
     ProductsProp,
     ProductsTallyProp,
-    ProductTallyProp
+    ProductTallyProp,
+    Identification
 }

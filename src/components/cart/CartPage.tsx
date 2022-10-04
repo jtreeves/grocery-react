@@ -1,14 +1,15 @@
 import { ReactEventHandler, useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { NavigateFunction, useNavigate } from 'react-router-dom'
 import { StorageContext } from '../../types'
 import GlobalStorage from '../../GlobalStorage'
-import CartList from './CartList'
 import calculateTotal from '../../utilities/calculateTotal'
+import formatCurrency from '../../utilities/formatCurrency'
+import ProductsList from '../products/ProductsList'
 
 function CartPage(): JSX.Element {
     const [storage, setStorage] = useContext<StorageContext>(GlobalStorage)
-    const navigate = useNavigate()
-    const total: string = calculateTotal(storage.cart)
+    const navigate: NavigateFunction = useNavigate()
+    const total: number = calculateTotal(storage.cart)
 
     const handleCheckout: ReactEventHandler = (): void => {
         setStorage({
@@ -22,9 +23,9 @@ function CartPage(): JSX.Element {
         <main>
             <h1>Cart</h1>
 
-            <CartList products={storage.cart} />
+            <ProductsList products={storage.cart} />
 
-            <p>TOTAL: ${total}</p>
+            <p>TOTAL: ${formatCurrency(total)}</p>
 
             <button onClick={handleCheckout}>CHECKOUT</button>
         </main>

@@ -119,7 +119,7 @@ const products: Product[] = [
         id: 'ICM449',
         name: 'ice cream',
         image: '🍦',
-        price: 6.22
+        price: 6.20
     },
     {
         id: 'LMN220',
@@ -155,7 +155,7 @@ const products: Product[] = [
         id: 'MLK922',
         name: 'milk',
         image: '🥛',
-        price: 2.07
+        price: 2.00
     },
     {
         id: 'ONN611',

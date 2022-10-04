@@ -1,21 +1,23 @@
 import { ReactEventHandler, useContext } from 'react'
-import { ProductProp, ProductTally } from '../../interfaces'
+import { Identification, ProductTally } from '../../interfaces'
 import { StorageContext } from '../../types'
 import GlobalStorage from '../../GlobalStorage'
 import findProductInCollection from '../../utilities/findProductInCollection'
-import addProduct from '../../utilities/addProduct'
-import removeProduct from '../../utilities/removeProduct'
+import updateProductTally from '../../utilities/updateProductTally'
+
+interface BrowseItemProps extends Identification {
+    stockTally: number
+}
 
 function BrowseItem({
-    product
-}: ProductProp): JSX.Element {
+    id,
+    stockTally
+}: BrowseItemProps): JSX.Element {
     const [storage, setStorage] = useContext<StorageContext>(GlobalStorage)
-    const foundProduct: ProductTally = findProductInCollection(product.id, storage.stock)
-    const productTally: number = foundProduct.tally
 
     const addProductToCart: ReactEventHandler = (): void => {
-        const updatedCart: ProductTally[] = addProduct(product, storage.cart)
-        const updatedStock: ProductTally[] = removeProduct(product, storage.stock)
+        const updatedCart: ProductTally[] = !findProductInCollection(id, storage.cart) ? [...storage.cart, {id: id, tally: 1}] : updateProductTally(id, true, storage.cart)
+        const updatedStock: ProductTally[] = updateProductTally(id, false, storage.stock)
 
         setStorage({
             cart: updatedCart,
@@ -24,25 +26,21 @@ function BrowseItem({
     }
 
     return (
-        <div>
-            <h2>{product.name}</h2>
-            <p>{product.image}</p>
-            <p>${product.price}</p>
-
-            {productTally < 6 && productTally > 0 &&
-                <p>Only {productTally} left in stock!</p>
+        <>
+            {stockTally < 6 && stockTally > 0 &&
+                <p>Only {stockTally} left in stock!</p>
             }
 
-            {productTally > 0 &&
+            {stockTally > 0 &&
                 <button onClick={addProductToCart}>
                     Add to Cart
                 </button>
             }
 
-            {productTally === 0 &&
+            {stockTally === 0 &&
                 <p>OUT OF STOCK</p>
             }
-        </div>
+        </>
     )
 }
 

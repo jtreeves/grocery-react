@@ -4,13 +4,13 @@ function findProductInCollection(
     id: string,
     collection: ProductTally[]
 ): ProductTally {
-    const foundProducts: ProductTally[] = collection.filter((
+    const initialProducts: ProductTally[] = collection.filter((
         collectedProduct: ProductTally
     ): boolean => {
         return collectedProduct.id === id
     })
 
-    const foundProduct: ProductTally = foundProducts[0]
+    const foundProduct: ProductTally = initialProducts[0]
 
     return foundProduct
 }

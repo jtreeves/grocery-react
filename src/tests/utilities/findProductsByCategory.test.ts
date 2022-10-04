@@ -1,4 +1,4 @@
-import findProductsByCategory from '../../utilities/findProductsByCategory'
+import findProductsByCategory from '../../utilities/findProductTalliesByCategory'
 
 describe('findProductsByCategory utility', () => {
     it('should be a function', () => {
