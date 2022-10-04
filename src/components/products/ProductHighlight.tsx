@@ -18,7 +18,7 @@ function ProductHighlight({
     const stockProduct: ProductTally = findProductInCollection(product.id, storage.stock)
     const stockTally: number = stockProduct.tally
     const cartProduct: ProductTally = findProductInCollection(product.id, storage.cart)
-    const cartTally: number = cartProduct.tally
+    const cartTally: number = cartProduct ? cartProduct.tally : 0
     const isBrowse: boolean = location.pathname.includes('browse')
     const isCart: boolean = location.pathname.includes('cart')
 
