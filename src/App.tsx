@@ -1,17 +1,23 @@
-import { useState } from 'react'
+import { 
+    useState 
+} from 'react'
 import { 
     Route, 
     Routes,
     Navigate
 } from 'react-router-dom'
-import { Storage } from './interfaces'
+import { 
+    Storage 
+} from './interfaces'
+import {
+    createInitialStock
+} from './utilities'
 import GlobalStorage from './GlobalStorage'
 import Header from './components/main/Header'
 import Footer from './components/main/Footer'
 import HomePage from './components/main/HomePage'
 import BrowsePage from './components/browse/BrowsePage'
 import CartPage from './components/cart/CartPage'
-import createInitialStock from './utilities/createInitialStock'
 
 function App(): JSX.Element {
     const [storage, setStorage] = useState<Storage>({

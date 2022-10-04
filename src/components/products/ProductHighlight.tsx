@@ -1,11 +1,24 @@
-import { useContext } from 'react'
-import { Location, useLocation } from 'react-router-dom'
-import { Identification, ProductTally, Product } from '../../interfaces'
-import { StorageContext } from '../../types'
+import { 
+    useContext 
+} from 'react'
+import { 
+    Location, 
+    useLocation 
+} from 'react-router-dom'
+import { 
+    Identification, 
+    ProductTally, 
+    Product 
+} from '../../interfaces'
+import { 
+    StorageContext 
+} from '../../types'
+import {
+    findProductInCollection,
+    findProductById,
+    formatCurrency
+ } from '../../utilities'
 import GlobalStorage from '../../GlobalStorage'
-import findProductInCollection from '../../utilities/findProductInCollection'
-import findProductById from '../../utilities/findProductById'
-import formatCurrency from '../../utilities/formatCurrency'
 import BrowseItem from '../browse/BrowseItem'
 import CartItem from '../cart/CartItem'
 
@@ -15,6 +28,9 @@ function ProductHighlight({
     const [storage] = useContext<StorageContext>(GlobalStorage)
     const location: Location = useLocation()
     const product: Product = findProductById(id)
+    const name: string = product.name
+    const image: string = product.image
+    const price: string = formatCurrency(product.price)
     const stockProduct: ProductTally = findProductInCollection(product.id, storage.stock)
     const stockTally: number = stockProduct.tally
     const cartProduct: ProductTally = findProductInCollection(product.id, storage.cart)
@@ -25,9 +41,9 @@ function ProductHighlight({
     return (
         <li>
             <article>
-                <h2>{product.name}</h2>
-                <p>{product.image}</p>
-                <p>${formatCurrency(product.price)}</p>
+                <h2>{name}</h2>
+                <p>{image}</p>
+                <p>{price}</p>
             </article>
 
             {isBrowse &&

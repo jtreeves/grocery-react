@@ -8,17 +8,23 @@ import {
     Category, 
     ProductTally
 } from '../../interfaces'
-import { StorageContext } from '../../types'
+import { 
+    StorageContext 
+} from '../../types'
+import { 
+    categories 
+} from '../../data'
+import { 
+    findProductTalliesByCategory, 
+    findCategoryByName 
+} from '../../utilities'
 import GlobalStorage from '../../GlobalStorage'
-import categoriesData from '../../data/categories'
-import findProductTalliesByCategory from '../../utilities/findProductTalliesByCategory'
-import findCategoryByName from '../../utilities/findCategoryByName'
 import ProductsList from '../products/ProductsList'
 import SelectCategory from './SelectCategory'
 
 function BrowsePage(): JSX.Element {
     const [storage] = useContext<StorageContext>(GlobalStorage)
-    const [category, setCategory] = useState<Category>(categoriesData[0])
+    const [category, setCategory] = useState<Category>(categories[0])
     const [products, setProducts] = useState<ProductTally[]>(storage.stock)
 
     const handleCategory: FormEventHandler = (

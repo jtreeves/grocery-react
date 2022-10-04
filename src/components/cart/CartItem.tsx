@@ -1,8 +1,18 @@
-import { ReactEventHandler, useContext } from 'react'
-import { ProductTally, Identification } from '../../interfaces'
-import { StorageContext } from '../../types'
+import { 
+    ReactEventHandler, 
+    useContext 
+} from 'react'
+import { 
+    ProductTally, 
+    Identification 
+} from '../../interfaces'
+import { 
+    StorageContext 
+} from '../../types'
+import {
+    updateProductTally
+} from '../../utilities'
 import GlobalStorage from '../../GlobalStorage'
-import updateProductTally from '../../utilities/updateProductTally'
 
 interface CartItemProps extends Identification {
     stockTally: number

@@ -1,9 +1,19 @@
-import { ReactEventHandler, useContext } from 'react'
-import { Identification, ProductTally } from '../../interfaces'
-import { StorageContext } from '../../types'
+import { 
+    ReactEventHandler, 
+    useContext 
+} from 'react'
+import { 
+    Identification, 
+    ProductTally 
+} from '../../interfaces'
+import { 
+    StorageContext 
+} from '../../types'
+import { 
+    findProductInCollection, 
+    updateProductTally 
+} from '../../utilities'
 import GlobalStorage from '../../GlobalStorage'
-import findProductInCollection from '../../utilities/findProductInCollection'
-import updateProductTally from '../../utilities/updateProductTally'
 
 interface BrowseItemProps extends Identification {
     stockTally: number

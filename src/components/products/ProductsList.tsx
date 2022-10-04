@@ -1,5 +1,10 @@
-import { ReactElement } from 'react'
-import { ProductTally, ProductsTallyProp } from '../../interfaces'
+import { 
+    ReactElement 
+} from 'react'
+import { 
+    ProductTally, 
+    ProductsTallyProp 
+} from '../../interfaces'
 import ProductHighlight from './ProductHighlight'
 
 function ProductsList({

@@ -24,18 +24,6 @@ interface Storage {
     stock: ProductTally[]
 }
 
-interface ProductProp {
-    product: Product
-}
-
-interface ProductsProp {
-    products: Product[]
-}
-
-interface ProductTallyProp {
-    product: ProductTally
-}
-
 interface ProductsTallyProp {
     products: ProductTally[]
 }
@@ -45,9 +33,6 @@ export type {
     Category,
     ProductTally,
     Storage,
-    ProductProp,
-    ProductsProp,
     ProductsTallyProp,
-    ProductTallyProp,
     Identification
 }

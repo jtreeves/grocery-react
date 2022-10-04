@@ -1,7 +1,11 @@
 function formatCurrency(
     currency: number
 ): string {
-    return (Math.round(currency * 100) / 100).toFixed(2)
+    const roundedCurrency: string = (Math.round(currency * 100) / 100).toFixed(2)
+    const dollarSign: string = '$'
+    const formattedCurrency: string = dollarSign + roundedCurrency
+
+    return formattedCurrency
 }
 
 export default formatCurrency
