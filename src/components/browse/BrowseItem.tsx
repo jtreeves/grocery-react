@@ -32,7 +32,9 @@ function BrowseItem({
             }
 
             {stockTally > 0 &&
-                <button onClick={addProductToCart}>
+                <button 
+                    onClick={addProductToCart}
+                >
                     Add to Cart
                 </button>
             }

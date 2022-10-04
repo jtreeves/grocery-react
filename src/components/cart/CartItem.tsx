@@ -37,7 +37,7 @@ function CartItem({
     }
 
     return (
-        <>
+        <article>
             {stockTally > 0 &&
                 <button onClick={addProductToCart}>
                     +
@@ -51,7 +51,7 @@ function CartItem({
                     -
                 </button>
             }
-        </>
+        </article>
     )
 }
 

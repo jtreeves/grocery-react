@@ -24,9 +24,11 @@ function ProductHighlight({
 
     return (
         <li>
-            <h2>{product.name}</h2>
-            <p>{product.image}</p>
-            <p>${formatCurrency(product.price)}</p>
+            <article>
+                <h2>{product.name}</h2>
+                <p>{product.image}</p>
+                <p>${formatCurrency(product.price)}</p>
+            </article>
 
             {isBrowse &&
                 <BrowseItem 

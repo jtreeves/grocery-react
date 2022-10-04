@@ -27,7 +27,10 @@ function SelectCategory({
 
     return (
         <form onChange={handleCategory}>
-            <label htmlFor='category'>Category</label>
+            <label htmlFor='category'>
+                Category
+            </label>
+
             <select name='category'>
                 {categoryOptions}
             </select>

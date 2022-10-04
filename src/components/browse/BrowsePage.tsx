@@ -36,9 +36,13 @@ function BrowsePage(): JSX.Element {
         <main>
             <h1>{category.name}</h1>
 
-            <SelectCategory handleCategory={handleCategory} />
+            <SelectCategory 
+                handleCategory={handleCategory} 
+            />
 
-            <ProductsList products={products} />
+            <ProductsList 
+                products={products} 
+            />
         </main>
     )
 }

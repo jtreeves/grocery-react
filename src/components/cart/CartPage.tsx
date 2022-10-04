@@ -23,11 +23,17 @@ function CartPage(): JSX.Element {
         <main>
             <h1>Cart</h1>
 
-            <ProductsList products={storage.cart} />
+            <ProductsList 
+                products={storage.cart} 
+            />
 
-            <p>TOTAL: ${formatCurrency(total)}</p>
+            <p>
+                TOTAL: ${formatCurrency(total)}
+            </p>
 
-            <button onClick={handleCheckout}>CHECKOUT</button>
+            <button onClick={handleCheckout}>
+                CHECKOUT
+            </button>
         </main>
     )
 }
