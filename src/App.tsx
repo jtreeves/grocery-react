@@ -16,6 +16,7 @@ import Footer from './components/main/Footer'
 import HomePage from './components/main/HomePage'
 import BrowsePage from './components/browse/BrowsePage'
 import CartPage from './components/cart/CartPage'
+import './styles/main.css'
 
 function App(): JSX.Element {
     const [storage, setStorage] = useState<Storage>({
