@@ -9,9 +9,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 3px solid #61DBFB;
+    border: 10px solid #61DBFB;
+    border-radius: 5px;
     padding: 20px;
-    border-radius: 3px;
     height: 200px;
     width: 200px;
 }
