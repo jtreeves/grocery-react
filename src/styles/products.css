@@ -1,0 +1,24 @@
+.products-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.product-highlight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid #61DBFB;
+    padding: 20px;
+}
+
+.product-highlight article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-image {
+    font-size: 100px;
+}

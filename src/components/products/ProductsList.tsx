@@ -6,6 +6,7 @@ import {
     ProductsTallyProp 
 } from '../../interfaces'
 import ProductHighlight from './ProductHighlight'
+import '../../styles/products.css'
 
 function ProductsList({
     products
@@ -23,7 +24,7 @@ function ProductsList({
     })
 
     return (
-        <ul>
+        <ul className='products-list'>
             {mappedProducts}
         </ul>
     )

@@ -35,7 +35,7 @@ function BrowsePage(): JSX.Element {
     }
 
     return (
-        <main>
+        <main id='browse'>
             <h1>{category.name}</h1>
 
             <SelectCategory 

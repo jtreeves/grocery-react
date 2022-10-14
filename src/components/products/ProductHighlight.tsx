@@ -19,6 +19,7 @@ import formatCurrency from '../../utilities/formatCurrency'
 import GlobalStorage from '../../GlobalStorage'
 import BrowseItem from '../browse/BrowseItem'
 import CartItem from '../cart/CartItem'
+import '../../styles/products.css'
 
 function ProductHighlight({
     id
@@ -37,11 +38,11 @@ function ProductHighlight({
     const isCart: boolean = location.pathname.includes('cart')
 
     return (
-        <li>
+        <li className='product-highlight'>
             <article>
                 <h2>{name}</h2>
-                <p>{image}</p>
-                <p>{price}</p>
+                <p className='product-image'>{image}</p>
+                <p className='product-price'>{price}</p>
             </article>
 
             {isBrowse &&

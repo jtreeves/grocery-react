@@ -29,7 +29,7 @@ function CartPage(): JSX.Element {
     }
 
     return (
-        <main>
+        <main id='cart'>
             <h1>Cart</h1>
 
             <ProductsList 
