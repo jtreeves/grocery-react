@@ -30,3 +30,7 @@
 .product-price {
     font-style: italic;
 }
+
+.out-of-stock {
+    filter: grayscale(1);
+}
