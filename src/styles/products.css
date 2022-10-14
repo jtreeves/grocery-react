@@ -25,3 +25,7 @@
 .product-image {
     font-size: 100px;
 }
+
+.product-price {
+    font-style: italic;
+}
