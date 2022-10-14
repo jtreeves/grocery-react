@@ -24,6 +24,7 @@ header, footer, h1, h2, h3 {
 header span {
     font-family: 'Bubblegum Sans', cursive;
     color: black;
+    font-size: xx-large;
 }
 
 nav ul {
@@ -54,7 +55,7 @@ main {
     align-items: center;
     gap: 30px;
     padding: 50px 100px;
-    min-height: calc(100vh - 254px);
+    min-height: calc(100vh - 272.5px);
 }
 
 header {
