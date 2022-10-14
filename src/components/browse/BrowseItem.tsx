@@ -22,6 +22,7 @@ function BrowseItem({
     stockTally
 }: BrowseItemProps): JSX.Element {
     const [storage, setStorage] = useContext<StorageContext>(GlobalStorage)
+    const inStock: boolean = stockTally > 0
 
     const addProductToCart: ReactEventHandler = (): void => {
         const updatedCart: ProductTally[] = !findProductInCollection(id, storage.cart) ? [...storage.cart, {id: id, tally: 1}] : updateProductTally(id, true, storage.cart)
@@ -33,23 +34,22 @@ function BrowseItem({
         })
     }
 
+    const buttonText: string = inStock ? '+' : 'x'
+    const buttonClass: string = inStock ? '' : 'out-of-stock'
+    const buttonFunction: ReactEventHandler = inStock ? addProductToCart : () => {}
+
     return (
         <article>
             {stockTally < 6 && stockTally > 0 &&
                 <p>Only {stockTally} left in stock!</p>
             }
 
-            {stockTally > 0 &&
-                <button 
-                    onClick={addProductToCart}
-                >
-                    Add to Cart
-                </button>
-            }
-
-            {stockTally === 0 &&
-                <p>OUT OF STOCK</p>
-            }
+            <button 
+                onClick={buttonFunction}
+                className={buttonClass}
+            >
+                {buttonText}
+            </button>
         </article>
     )
 }

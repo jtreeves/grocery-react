@@ -34,3 +34,8 @@
 .out-of-stock {
     filter: grayscale(1);
 }
+
+button.out-of-stock {
+    cursor: not-allowed;
+    pointer-events: none;
+}
