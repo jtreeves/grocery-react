@@ -11,6 +11,9 @@
     align-items: center;
     border: 3px solid #61DBFB;
     padding: 20px;
+    border-radius: 3px;
+    height: 200px;
+    width: 200px;
 }
 
 .product-highlight article {
