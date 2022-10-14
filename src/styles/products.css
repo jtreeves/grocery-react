@@ -9,7 +9,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 10px solid #61DBFB;
+    justify-content: space-between;
+    border: 5px solid #61DBFB;
     border-radius: 5px;
     padding: 20px;
     height: 200px;

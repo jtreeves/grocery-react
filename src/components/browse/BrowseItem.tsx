@@ -34,7 +34,7 @@ function BrowseItem({
     }
 
     return (
-        <>
+        <article>
             {stockTally < 6 && stockTally > 0 &&
                 <p>Only {stockTally} left in stock!</p>
             }
@@ -50,7 +50,7 @@ function BrowseItem({
             {stockTally === 0 &&
                 <p>OUT OF STOCK</p>
             }
-        </>
+        </article>
     )
 }
 
