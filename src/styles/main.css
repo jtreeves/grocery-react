@@ -17,7 +17,7 @@ ul {
     margin: 0;
 }
 
-header, footer, h1, h2, h3 {
+header, footer, h1, h2, h3, .math-symbol {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -82,4 +82,9 @@ button:hover {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.muted-button {
+    filter: grayscale(1);
+    cursor: not-allowed;
 }
