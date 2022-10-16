@@ -25,7 +25,7 @@ function CartPage(): JSX.Element {
             ...storage,
             cart: []
         })
-        navigate('home')
+        navigate('/home')
     }
 
     return (

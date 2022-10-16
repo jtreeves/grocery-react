@@ -1,6 +1,18 @@
+import { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { StorageContext } from '../../types'
+import GlobalStorage from '../../GlobalStorage'
+import countItemsInCart from '../../utilities/countItemsInCart'
 
 function Header(): JSX.Element {
+    const [storage] = useContext<StorageContext>(GlobalStorage)
+    const [count, setCount] = useState<number>()
+
+    useEffect(() => {
+        const currentCount: number = countItemsInCart(storage.cart)
+        setCount(currentCount)
+    }, [storage.cart])
+
     return (
         <header>
             <span>Groceryz</span>
@@ -21,7 +33,7 @@ function Header(): JSX.Element {
                     
                     <li>
                         <Link to='cart'>
-                            Cart
+                            Cart ({count})
                         </Link>
                     </li>
                 </ul>
