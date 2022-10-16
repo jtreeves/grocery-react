@@ -10,10 +10,10 @@ import {
 import { 
     StorageContext 
 } from '../../types'
-import calculateTotal from '../../utilities/calculateTotal'
-import formatCurrency from '../../utilities/formatCurrency'
 import GlobalStorage from '../../GlobalStorage'
 import ProductsList from '../products/ProductsList'
+import calculateTotal from '../../utilities/calculateTotal'
+import formatCurrency from '../../utilities/formatCurrency'
 import '../../styles/cart.css'
 
 function CartPage(): JSX.Element {

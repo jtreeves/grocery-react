@@ -11,12 +11,12 @@ import {
 import { 
     StorageContext 
 } from '../../types'
+import GlobalStorage from '../../GlobalStorage'
+import SelectCategory from './SelectCategory'
+import ProductsList from '../products/ProductsList'
 import categories from '../../data/categories'
 import findProductTalliesByCategory from '../../utilities/findProductTalliesByCategory'
 import findCategoryByName from '../../utilities/findCategoryByName'
-import GlobalStorage from '../../GlobalStorage'
-import ProductsList from '../products/ProductsList'
-import SelectCategory from './SelectCategory'
 import '../../styles/browse.css'
 
 function BrowsePage(): JSX.Element {
