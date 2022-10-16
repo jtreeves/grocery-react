@@ -36,6 +36,7 @@ function BrowseItem({
 
     const buttonText: string = inStock ? '+' : 'x'
     const hoverText: string = inStock ? 'ADD TO CART' : 'OUT OF STOCK'
+    const buttonClass: string = inStock ? '' : 'muted-button'
     const buttonFunction: ReactEventHandler = inStock ? addProductToCart : () => {}
 
     return (
@@ -43,6 +44,7 @@ function BrowseItem({
             <button 
                 onClick={buttonFunction}
                 title={hoverText}
+                className={buttonClass}
             >
                 {buttonText}
             </button>

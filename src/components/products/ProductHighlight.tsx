@@ -19,7 +19,6 @@ import formatCurrency from '../../utilities/formatCurrency'
 import GlobalStorage from '../../GlobalStorage'
 import BrowseItem from '../browse/BrowseItem'
 import CartItem from '../cart/CartItem'
-import '../../styles/products.css'
 
 function ProductHighlight({
     id

@@ -1,6 +1,6 @@
 import { 
     ReactEventHandler, 
-    useContext 
+    useContext
 } from 'react'
 import { 
     ProductTally, 
@@ -9,8 +9,11 @@ import {
 import { 
     StorageContext 
 } from '../../types'
-import updateProductTally from '../../utilities/updateProductTally'
 import GlobalStorage from '../../GlobalStorage'
+import updateProductTally from '../../utilities/updateProductTally'
+import filterOutEmptyItems from '../../utilities/filterOutEmptyItems'
+import calculateItemTotal from '../../utilities/calculateItemTotal'
+import formatCurrency from '../../utilities/formatCurrency'
 
 interface CartItemProps extends Identification {
     stockTally: number
@@ -23,6 +26,9 @@ function CartItem({
     cartTally
 }: CartItemProps): JSX.Element {
     const [storage, setStorage] = useContext<StorageContext>(GlobalStorage)
+    const inStock: boolean = stockTally > 0
+    const itemTotal: number = calculateItemTotal(id, cartTally)
+    const formattedTotal: string = formatCurrency(itemTotal)
 
     const addProductToCart: ReactEventHandler = (): void => {
         const updatedCart: ProductTally[] = updateProductTally(id, true, storage.cart)
@@ -37,28 +43,45 @@ function CartItem({
     const removeProductFromCart: ReactEventHandler = (): void => {
         const updatedCart: ProductTally[] = updateProductTally(id, false, storage.cart)
         const updatedStock: ProductTally[] = updateProductTally(id, true, storage.stock)
+        const filteredCart: ProductTally[] = filterOutEmptyItems(updatedCart)
 
         setStorage({
-            cart: updatedCart,
+            cart: filteredCart,
             stock: updatedStock
         })
     }
 
+    const topClass: string = inStock ? '' : 'muted-button'
+    const topText: string = inStock ? '+' : 'x'
+    const topHover: string = inStock ? 'INCREASE QUANTITY' : 'OUT OF STOCK'
+    const topFunction: ReactEventHandler = inStock ? addProductToCart : () => {}
+
     return (
-        <article>
-            {stockTally > 0 &&
-                <button onClick={addProductToCart}>
-                    +
+        <article className='cart-item'>
+            <p className='math-symbol'>x</p>
+
+            <div>
+                <button 
+                    onClick={topFunction}
+                    title={topHover}
+                    className={topClass}
+                >
+                    {topText}
                 </button>
-            }
 
-            <p>{cartTally}</p>
+                <p>{cartTally}</p>
 
-            {cartTally > 0 &&
-                <button onClick={removeProductFromCart}>
+                <button 
+                    onClick={removeProductFromCart}
+                    title='DECREASE QUANTITY'
+                >
                     -
                 </button>
-            }
+            </div>
+
+            <p className='math-symbol'>=</p>
+
+            <p className='item-total'>{formattedTotal}</p>
         </article>
     )
 }

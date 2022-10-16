@@ -6,7 +6,6 @@ import {
     Category
 } from '../../interfaces'
 import categories from '../../data/categories'
-import '../../styles/browse.css'
 
 interface SelectCategoryProp {
     handleCategory: FormEventHandler

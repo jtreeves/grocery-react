@@ -17,6 +17,7 @@ import findCategoryByName from '../../utilities/findCategoryByName'
 import GlobalStorage from '../../GlobalStorage'
 import ProductsList from '../products/ProductsList'
 import SelectCategory from './SelectCategory'
+import '../../styles/browse.css'
 
 function BrowsePage(): JSX.Element {
     const [storage] = useContext<StorageContext>(GlobalStorage)

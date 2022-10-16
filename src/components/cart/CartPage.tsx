@@ -4,7 +4,8 @@ import {
 } from 'react'
 import { 
     NavigateFunction, 
-    useNavigate 
+    useNavigate,
+    Link
 } from 'react-router-dom'
 import { 
     StorageContext 
@@ -13,6 +14,7 @@ import calculateTotal from '../../utilities/calculateTotal'
 import formatCurrency from '../../utilities/formatCurrency'
 import GlobalStorage from '../../GlobalStorage'
 import ProductsList from '../products/ProductsList'
+import '../../styles/cart.css'
 
 function CartPage(): JSX.Element {
     const [storage, setStorage] = useContext<StorageContext>(GlobalStorage)
@@ -32,20 +34,24 @@ function CartPage(): JSX.Element {
         <main id='cart'>
             <h1>Cart</h1>
 
-            <ProductsList 
-                products={storage.cart} 
-            />
+            {storage.cart.length === 0 ? <p>
+                Your shopping cart is empty! Go <Link to='/browse'>browse</Link> our items, and stock up!
+            </p> : <section>
+                <ProductsList 
+                    products={storage.cart} 
+                />
 
-            <p>
-                TOTAL: {formattedTotal}
-            </p>
+                <p>
+                    TOTAL: {formattedTotal}
+                </p>
 
-            <button 
-                onClick={handleCheckout}
-                title='ALL PURCHASES FINAL; NO REFUNDS'
-            >
-                CHECKOUT
-            </button>
+                <button 
+                    onClick={handleCheckout}
+                    title='ALL PURCHASES FINAL; NO REFUNDS'
+                >
+                    CHECKOUT
+                </button>
+            </section>}
         </main>
     )
 }
