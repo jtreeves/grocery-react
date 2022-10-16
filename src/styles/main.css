@@ -1,20 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Nanum+Myeongjo:wght@400;800&family=Roboto:wght@300&display=swap');
 
+body, p, ul, h1, h2, h3 {
+    margin: 0
+}
+
 body {
-    margin: 0;
     font-family: 'Nanum Myeongjo', serif;
     background-color: black;
     color: #61DBFB;
 }
 
-p {
-    margin: 0;
-}
-
 ul {
     list-style-type: none;
     padding: 0;
-    margin: 0;
+}
+
+a {
+    text-decoration: none;
 }
 
 header, footer, h1, h2, h3, .math-symbol {
@@ -36,17 +38,12 @@ nav ul li {
     text-transform: uppercase;
 }
 
-a {
-    text-decoration: none;
+nav ul li a {
     color: black;
 }
 
 header ul li:hover {
     font-weight: bold;
-}
-
-h1, h2, h3 {
-    margin: 0;
 }
 
 main {
@@ -74,17 +71,20 @@ footer {
     font-style: italic;
 }
 
-button:hover {
-    cursor: pointer;
-}
-
 #home section {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 .muted-button {
     filter: grayscale(1);
+}
+
+.muted-button:hover {
     cursor: not-allowed;
 }

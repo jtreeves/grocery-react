@@ -36,7 +36,7 @@ function BrowseItem({
 
     const buttonText: string = inStock ? '+' : 'x'
     const hoverText: string = inStock ? 'ADD TO CART' : 'OUT OF STOCK'
-    const buttonClass: string = inStock ? '' : 'muted-button'
+    const buttonClass: string = inStock ? 'product-button' : 'product-button muted-button'
     const buttonFunction: ReactEventHandler = inStock ? addProductToCart : () => {}
 
     return (
