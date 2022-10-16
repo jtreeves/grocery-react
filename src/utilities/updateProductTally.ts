@@ -20,7 +20,7 @@ function updateProductTally(
             return product
         }
     })
-
+    
     return updatedCollection
 }
 
