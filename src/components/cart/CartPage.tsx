@@ -41,16 +41,18 @@ function CartPage(): JSX.Element {
                     products={storage.cart} 
                 />
 
-                <p>
-                    TOTAL: {formattedTotal}
-                </p>
+                <div id='cart-checkout'>
+                    <p>
+                        TOTAL: {formattedTotal}
+                    </p>
 
-                <button 
-                    onClick={handleCheckout}
-                    title='ALL PURCHASES FINAL; NO REFUNDS'
-                >
-                    CHECKOUT
-                </button>
+                    <button 
+                        onClick={handleCheckout}
+                        title='ALL PURCHASES FINAL; NO REFUNDS'
+                    >
+                        CHECKOUT
+                    </button>
+                </div>
             </section>}
         </main>
     )
