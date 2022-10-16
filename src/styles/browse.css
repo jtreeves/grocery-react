@@ -1,0 +1,19 @@
+form {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+label {
+    font-size: small;
+    font-style: italic;
+}
+
+select {
+    border: 1px solid #61DBFB;
+    border-radius: 3px;
+    padding: 5px;
+    color: #61DBFB;
+    background-color: black;
+    outline: 0;
+}

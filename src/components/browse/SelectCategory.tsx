@@ -6,6 +6,7 @@ import {
     Category
 } from '../../interfaces'
 import categories from '../../data/categories'
+import '../../styles/browse.css'
 
 interface SelectCategoryProp {
     handleCategory: FormEventHandler
@@ -28,7 +29,7 @@ function SelectCategory({
     return (
         <form onChange={handleCategory}>
             <label htmlFor='category'>
-                Category
+                Select Category
             </label>
 
             <select name='category'>
