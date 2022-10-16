@@ -34,13 +34,15 @@ function ProductHighlight({
     const stockTally: number = stockProduct.tally
     const cartProduct: ProductTally = findProductInCollection(product.id, storage.cart)
     const cartTally: number = cartProduct ? cartProduct.tally : 0
-    const infoClass: string = stockTally > 0 ? '' : 'out-of-stock'
+    const productClass: string = 'product-highlight'
+    const stockClass: string = 'out-of-stock'
+    const mainClass: string = stockTally > 0 ? productClass : `${productClass} ${stockClass}`
     const isBrowse: boolean = location.pathname.includes('browse')
     const isCart: boolean = location.pathname.includes('cart')
 
     return (
-        <li className='product-highlight'>
-            <article className={infoClass}>
+        <li className={mainClass}>
+            <article className='product-details'>
                 <h2>{name}</h2>
                 <p className='product-image'>{image}</p>
                 <p className='product-price'>{price}</p>

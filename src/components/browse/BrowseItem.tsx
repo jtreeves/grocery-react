@@ -35,21 +35,29 @@ function BrowseItem({
     }
 
     const buttonText: string = inStock ? '+' : 'x'
-    const buttonClass: string = inStock ? '' : 'out-of-stock'
+    const hoverText: string = inStock ? 'ADD TO CART' : 'OUT OF STOCK'
     const buttonFunction: ReactEventHandler = inStock ? addProductToCart : () => {}
 
     return (
-        <article>
-            {stockTally < 6 && stockTally > 0 &&
-                <p>Only {stockTally} left in stock!</p>
-            }
-
+        <article className='browse-item'>
             <button 
                 onClick={buttonFunction}
-                className={buttonClass}
+                title={hoverText}
             >
                 {buttonText}
             </button>
+
+            {stockTally < 6 && stockTally > 0 &&
+                <div>
+                    <p>Only {stockTally} left in stock!</p>
+                </div>
+            }
+
+            {stockTally === 0 &&
+                <div>
+                    <p>Out of stock!</p>
+                </div>
+            }
         </article>
     )
 }

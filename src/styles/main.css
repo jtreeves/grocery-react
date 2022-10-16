@@ -74,6 +74,10 @@ footer {
     font-style: italic;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 #home section {
     display: flex;
     flex-direction: column;
