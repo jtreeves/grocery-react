@@ -40,7 +40,10 @@ function CartPage(): JSX.Element {
                 TOTAL: {formattedTotal}
             </p>
 
-            <button onClick={handleCheckout}>
+            <button 
+                onClick={handleCheckout}
+                title='ALL PURCHASES FINAL; NO REFUNDS'
+            >
                 CHECKOUT
             </button>
         </main>
