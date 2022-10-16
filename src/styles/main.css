@@ -73,3 +73,9 @@ footer {
     font-size: small;
     font-style: italic;
 }
+
+#home section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
