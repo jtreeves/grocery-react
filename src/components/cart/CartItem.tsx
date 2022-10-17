@@ -51,10 +51,10 @@ function CartItem({
         })
     }
 
-    const topClass: string = inStock ? 'product-button' : 'product-button muted-button'
     const topText: string = inStock ? '+' : 'x'
     const topHover: string = inStock ? 'INCREASE QUANTITY' : 'OUT OF STOCK'
     const downHover: string = cartTally === 1 ? 'DELETE FROM CART' : 'DECREASE QUANTITY'
+    const topClass: string = inStock ? 'product-button' : 'product-button muted-button'
     const topFunction: ReactEventHandler = inStock ? addProductToCart : () => {}
 
     return (

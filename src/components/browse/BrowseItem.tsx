@@ -35,7 +35,7 @@ function BrowseItem({
     }
 
     const buttonText: string = inStock ? '+' : 'x'
-    const hoverText: string = inStock ? 'ADD TO CART' : 'OUT OF STOCK'
+    const buttonHover: string = inStock ? 'ADD TO CART' : 'OUT OF STOCK'
     const buttonClass: string = inStock ? 'product-button' : 'product-button muted-button'
     const buttonFunction: ReactEventHandler = inStock ? addProductToCart : () => {}
 
@@ -43,7 +43,7 @@ function BrowseItem({
         <article className='browse-item'>
             <button 
                 onClick={buttonFunction}
-                title={hoverText}
+                title={buttonHover}
                 className={buttonClass}
             >
                 {buttonText}
