@@ -60,6 +60,7 @@
 #cart-checkout button {
     border: 1px solid #61DBFB;
     background-color: #61DBFB;
+    color: black;
     border-radius: 5px;
     padding: 5px;
 }
