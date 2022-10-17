@@ -28,7 +28,6 @@
 #cart .product-details {
     flex-direction: row;
     width: 50%;
-    justify-content: space-between;
 }
 
 #cart .product-image {

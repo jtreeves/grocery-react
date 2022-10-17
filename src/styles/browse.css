@@ -45,6 +45,7 @@ select {
     display: flex;
     justify-content: center;
     align-items: center;
+    align-self: flex-start;
 }
 
 .browse-item div p {

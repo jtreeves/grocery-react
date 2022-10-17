@@ -83,7 +83,7 @@ function CartItem({
 
             <p className='math-symbol'>=</p>
 
-            <p className='item-total'>{formattedTotal}</p>
+            <p>{formattedTotal}</p>
         </article>
     )
 }
